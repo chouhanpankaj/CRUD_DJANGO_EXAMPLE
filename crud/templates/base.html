@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% block title %} {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse" >
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="nav-brand" href="{% url  'list' %}">Home</a></li>
+                <li title="Add a new student"><a class="nav-link" href="{% url 'add' %}">Add Student</a></li>
+                <li title="Go to admin interface"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+            </ul>
+        </div>  
+    </nav>
+    
+    <div class="container">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+        
+</body>
+</html>

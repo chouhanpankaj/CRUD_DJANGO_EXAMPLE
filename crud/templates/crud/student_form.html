@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>
+        {% if not form.instance.pk %}
+        Add Student
+        {% else %}
+        Update Student
+        {% endif %}
+    </title>   
+ {% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <!-- <h2>Add Student Details here...</h2> -->
+        <h2>
+            {% if not form.instance.pk %}
+            Add Student Details.
+            {% else %}
+            Update Student Details.
+            {% endif %}
+        </h2>
+        <br/>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
